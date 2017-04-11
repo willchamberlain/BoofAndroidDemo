@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "org.boofcv.android"
@@ -41,6 +41,12 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+
+
+    sourceSets {
+        main.java.srcDirs += '/mnt/nixbig/downloads/boofcv_lessthanoptimal/BoofCV_git_clone_recursive/boofcv/main'
+        main.java.srcDirs += '/mnt/nixbig/downloads/boofcv_lessthanoptimal/GeoRegression/GeoRegression/main/src'
+    }
 }
 
 // conflicts with a Android stuff
@@ -50,7 +56,11 @@ configurations {
 }
 
 dependencies {
+    //  THIS LINE BRINGS IN THE BOOFCV LIBRARIES FROM MAVEN
     ['android', 'core'].each { String a -> compile group: 'org.boofcv', name: a, version: '0.26' }
+//    ['android', 'core'].each { String a -> compile group: 'org.boofcv', name: a, version: project.deepboof_version }
+//    compile project(':main')
+//    compile project(':main:boofcv-recognition')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:support-v4:25.1.0'

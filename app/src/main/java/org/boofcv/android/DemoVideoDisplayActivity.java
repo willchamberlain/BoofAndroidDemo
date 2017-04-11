@@ -30,7 +30,7 @@ public class DemoVideoDisplayActivity extends VideoDisplayActivity {
 	}
 
 	@Override
-	protected Camera openConfigureCamera( Camera.CameraInfo info ) {
+	protected Camera openConfigureCamera( Camera.CameraInfo info ) {								// set up the video/image input along with the UI - can only get video as it comes though the preview
 		Camera mCamera = Camera.open(preference.cameraId);
 		Camera.getCameraInfo(preference.cameraId,info);
 
