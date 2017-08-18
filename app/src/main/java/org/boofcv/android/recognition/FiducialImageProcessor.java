@@ -109,9 +109,9 @@ class FiducialImageProcessor<T extends ImageBase> extends VideoImageProcessing<P
 
         detector.detect(input);
 
-        if (fiducialSquareActivity.showInput) {
+        if (fiducialSquareActivity.showInput) {                                             // display the input image unchanged...
             ConvertBitmap.multiToBitmap(color, output, storage);
-        } else {
+        } else {                                                                            // ... or display the checquerboard or binarised/thresholded input image as appropriate
             GrayU8 binary = null;
             if (detector instanceof CalibrationFiducialDetector) {
                 DetectorFiducialCalibration a = ((CalibrationFiducialDetector) detector).getCalibDetector();
