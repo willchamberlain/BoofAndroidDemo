@@ -1,4 +1,17 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'com.google.protobuf'
+
+
+
+repositories {
+    maven {
+        url 'https://github.com/rosjava/rosjava_mvn_repo/raw/master'
+    }
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
 
 android {
     compileSdkVersion 25
@@ -8,7 +21,7 @@ android {
         applicationId "org.boofcv.android"
         minSdkVersion 13
         targetSdkVersion 25
-        versionCode 12
+        versionCode 14
         versionName "1.8.1"
         multiDexEnabled true
     }
@@ -55,6 +68,8 @@ configurations {
     all*.exclude group: "org.apache.commons", module: "commons-compress"
 }
 
+
+
 dependencies {
     //  THIS LINE BRINGS IN THE BOOFCV LIBRARIES FROM MAVEN
     ['android', 'core'].each { String a -> compile group: 'org.boofcv', name: a, version: '0.26' }
@@ -66,4 +81,50 @@ dependencies {
     compile 'com.android.support:support-v4:25.1.0'
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
     compile 'com.android.support:multidex:1.0.1'
+
+//    compile 'com.google.protobuf:protobuf-lite:3.0.0'{
+//        exclude group: 'junit' exclude group: 'xml-apis', module: 'xml-apis' exclude group: 'xpp3' exclude group: 'org.apache.commons'
+//        exclude module: 'commons-lang'
+//    }
+//    compile ('com.google.protobuf:protobuf-gradle-plugin:0.8.3') {
+//        exclude group: 'junit' exclude group: 'xml-apis', module: 'xml-apis' exclude group: 'xpp3' exclude group: 'org.apache.commons'
+//        exclude module: 'commons-lang'
+//    }
+
+    compile 'dnsjava:dnsjava:2.1.1'
+    compile('org.ros.rosjava_core:rosjava:[0.2,0.3)') {
+        exclude group: 'junit' exclude group: 'xml-apis', module: 'xml-apis' exclude group: 'xpp3'
+    }
+    compile('org.ros.rosjava_messages:diagnostic_msgs:[1.11,1.12)') {
+        exclude group: 'junit' exclude group: 'xml-apis', module: 'xml-apis' exclude group: 'xpp3'
+    }
+    compile('org.ros.rosjava_messages:sensor_msgs:[1.11,1.12)') {
+        exclude group: 'junit' exclude group: 'xml-apis', module: 'xml-apis' exclude group: 'xpp3'
+    }
 }
+
+//protobuf {
+//    protoc {
+//        // You still need protoc like in the non-Android case
+//        artifact = 'com.google.protobuf:protoc:3.0.0'
+//    }
+//    plugins {
+//        javalite {
+//            // The codegen for lite comes as a separate artifact
+//            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
+//        }
+//    }
+//    generateProtoTasks {
+//        all().each { task ->
+//            task.builtins {
+//                // In most cases you don't need the full Java output
+//                // if you use the lite output.
+//                remove java
+//            }
+//            task.plugins {
+//                javalite { }
+//            }
+//        }
+//    }
+//}
+

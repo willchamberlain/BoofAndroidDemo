@@ -16,10 +16,12 @@ import boofcv.struct.image.GrayU8;
 public class FiducialDetectionManager {
 
 
+    public static final double TARGET_WIDTH_OF_FIDUCIAL_MARKER_SIZE = 0.135; //0.257;
+
     @NonNull
     static boofcv.abst.fiducial.FiducialDetector<GrayU8> createGrayU8FiducialDetector(int binaryThreshold, Object lock, boolean robust) {
         boofcv.abst.fiducial.FiducialDetector<GrayU8> detector;
-        ConfigFiducialBinary config = new ConfigFiducialBinary(0.162);
+        ConfigFiducialBinary config = new ConfigFiducialBinary(TARGET_WIDTH_OF_FIDUCIAL_MARKER_SIZE);
 
         synchronized (lock) {
             ConfigThreshold configThreshold;

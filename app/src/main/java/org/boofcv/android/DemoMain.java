@@ -117,62 +117,62 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 
 
 	private void createGroups() {
-		Group ip = new Group("Image Processing");
-		Group detect = new Group("Detection");
-		Group assoc = new Group("Association");
-		Group tracker = new Group("Tracking");
+//		Group ip = new Group("Image Processing");
+//		Group detect = new Group("Detection");
+//		Group assoc = new Group("Association");
+//		Group tracker = new Group("Tracking");
 		Group calib = new Group("Calibration");
-		Group sfm = new Group("Structure From Motion");
+//		Group sfm = new Group("Structure From Motion");
 		Group recognition = new Group("Recognition");
-
-		ip.addChild("Blur",BlurDisplayActivity.class);
-		ip.addChild("Gradient",GradientDisplayActivity.class);
-		ip.addChild("Auto Threshold",ThresholdDisplayActivity.class);
-		ip.addChild("Binary Ops",BinaryDisplayActivity.class);
-		ip.addChild("Enhance",EnhanceDisplayActivity.class);
-		ip.addChild("Transform",ImageTransformActivity.class);
-
-		detect.addChild("Corner/Blob",PointDisplayActivity.class);
-		detect.addChild("Scale Space",ScalePointDisplayActivity.class);
-		detect.addChild("Lines",LineDisplayActivity.class);
-		detect.addChild("Canny Edge",CannyEdgeActivity.class);
-		detect.addChild("Contour Shapes",ContourShapeFittingActivity.class);
-		detect.addChild("Black Polygon",DetectBlackPolygonActivity.class);
-		detect.addChild("Black Ellipse",DetectBlackEllipseActivity.class);
-		// segmentation is just too slow right now
-//		detect.addChild("Segmentation",SegmentationDisplayActivity.class);
-
-		assoc.addChild("Two Pictures",AssociationActivity.class);
-
-		tracker.addChild("Object Tracking", ObjectTrackerActivity.class);
-		tracker.addChild("KLT Pyramid", KltDisplayActivity.class);
-		tracker.addChild("Motion Detection", StaticBackgroundMotionActivity.class);
-		// To most people the trackers below will look like a broken KLT
-//		tracker.addChild("Point: Det-Desc-Assoc", DdaTrackerDisplayActivity.class);
-//		tracker.addChild("Point: Combined", CombinedTrackerDisplayActivity.class);
-
-		recognition.addChild("Image Classification", ImageClassificationActivity.class);
+//
+//		ip.addChild("Blur",BlurDisplayActivity.class);
+//		ip.addChild("Gradient",GradientDisplayActivity.class);
+//		ip.addChild("Auto Threshold",ThresholdDisplayActivity.class);
+//		ip.addChild("Binary Ops",BinaryDisplayActivity.class);
+//		ip.addChild("Enhance",EnhanceDisplayActivity.class);
+//		ip.addChild("Transform",ImageTransformActivity.class);
+//
+//		detect.addChild("Corner/Blob",PointDisplayActivity.class);
+//		detect.addChild("Scale Space",ScalePointDisplayActivity.class);
+//		detect.addChild("Lines",LineDisplayActivity.class);
+//		detect.addChild("Canny Edge",CannyEdgeActivity.class);
+//		detect.addChild("Contour Shapes",ContourShapeFittingActivity.class);
+//		detect.addChild("Black Polygon",DetectBlackPolygonActivity.class);
+//		detect.addChild("Black Ellipse",DetectBlackEllipseActivity.class);
+//		// segmentation is just too slow right now
+////		detect.addChild("Segmentation",SegmentationDisplayActivity.class);
+//
+//		assoc.addChild("Two Pictures",AssociationActivity.class);
+//
+//		tracker.addChild("Object Tracking", ObjectTrackerActivity.class);
+//		tracker.addChild("KLT Pyramid", KltDisplayActivity.class);
+//		tracker.addChild("Motion Detection", StaticBackgroundMotionActivity.class);
+//		// To most people the trackers below will look like a broken KLT
+////		tracker.addChild("Point: Det-Desc-Assoc", DdaTrackerDisplayActivity.class);
+////		tracker.addChild("Point: Combined", CombinedTrackerDisplayActivity.class);
+//
+//		recognition.addChild("Image Classification", ImageClassificationActivity.class);
 		recognition.addChild("Square Binary",FiducialSquareBinaryActivity.class);
-		recognition.addChild("Square Image",FiducialSquareImageActivity.class);
-		recognition.addChild("Square Image Library",FiducialImageLibraryAcitivity.class);
+//		recognition.addChild("Square Image",FiducialSquareImageActivity.class);
+//		recognition.addChild("Square Image Library",FiducialImageLibraryAcitivity.class);
 		recognition.addChild("Calib Targets",FiducialCalibrationActivity.class);
-
+//
 		calib.addChild("Calibrate",CalibrationActivity.class);
 		calib.addChild("Undistort",UndistortDisplayActivity.class);
-
-		sfm.addChild("Stereo",DisparityActivity.class);
-		sfm.addChild("Stabilization",StabilizeDisplayActivity.class);
-		sfm.addChild("Mosaic",MosaicDisplayActivity.class);
-
-
-
-		groups.add(ip);
-		groups.add(detect);
-		groups.add(assoc);
-		groups.add(tracker);
+//
+//		sfm.addChild("Stereo",DisparityActivity.class);
+//		sfm.addChild("Stabilization",StabilizeDisplayActivity.class);
+//		sfm.addChild("Mosaic",MosaicDisplayActivity.class);
+//
+//
+//
+//		groups.add(ip);
+//		groups.add(detect);
+//		groups.add(assoc);
+//		groups.add(tracker);
 		groups.add(recognition);
 		groups.add(calib);
-		groups.add(sfm);
+//		groups.add(sfm);
 	}
 
 	@Override

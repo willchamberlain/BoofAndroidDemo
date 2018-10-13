@@ -13,11 +13,12 @@ public class FiducialSquareBinaryActivity extends FiducialSquareActivity
 
 	public FiducialSquareBinaryActivity() {
 		super(FiducialSquareBinaryHelpActivity.class);
+		System.out.println("FiducialSquareBinaryActivity()");
 	}
 
 	@Override
 	protected FiducialDetector<GrayU8> createDetector() {
-
+		System.out.println("FiducialSquareBinaryActivity: createDetector()");
 		return FiducialDetectionManager.createGrayU8FiducialDetector(binaryThreshold, lock, robust);
 	}
 

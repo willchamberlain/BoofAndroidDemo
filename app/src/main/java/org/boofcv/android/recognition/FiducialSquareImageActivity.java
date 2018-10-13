@@ -48,6 +48,7 @@ public class FiducialSquareImageActivity extends FiducialSquareActivity
 
 	@Override
 	protected FiducialDetector<GrayU8> createDetector() {
+		System.out.println("FiducialSquareImageActivity: createDetector()");
 
 		SquareImage_to_FiducialDetector<GrayU8> detector;
 		ConfigFiducialImage config = new ConfigFiducialImage();

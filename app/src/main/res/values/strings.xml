@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BoofDemoWill</string> <!-- /mnt/nixbig/downloads/boofcv_will/BoofAndroidDemo/app/src/main/res/values/strings.xml -->
+    <string name="app_name">BoofDemoWill2</string> <!-- /mnt/nixbig/downloads/boofcv_will/BoofAndroidDemo/app/src/main/res/values/strings.xml -->
     <string-array name="binary_filters">
         <item>None</item>
         <item>Dilate-4</item>

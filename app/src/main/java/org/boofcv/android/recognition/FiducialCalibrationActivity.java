@@ -57,6 +57,7 @@ public class FiducialCalibrationActivity extends FiducialSquareActivity {
 
 	@Override
 	protected FiducialDetector<GrayU8> createDetector() {
+		System.out.println("FiducialCalibrationActivity: createDetector()");
 
 		if( targetType == CalibrationPatterns.CHESSBOARD ) {
 			ConfigChessboard config = new ConfigChessboard(numCols, numRows, 1);
