@@ -381,10 +381,10 @@ class FiducialImageProcessor<T extends ImageBase> extends VideoImageProcessing<P
     private String toMessage(String numberString, Se3_F64 cameraToTarget) {
         Vector3D_F64 transl = cameraToTarget.getT();
         DenseMatrix64F rot = cameraToTarget.getRotation();
-        String message_= numberString+": ";
+        String message_= "feature_id=["+numberString+"] ";
         message_=message_+" transl=["+transl.getX()+","+transl.getY()+","+transl.getZ()+"] ";
         message_=message_+" rot=["+
-            rot.get(0,0) +", "+rot.get(1,0)+", "+rot.get(2,0)+"; "+ //get(row, column): BoofCV is row-major, so the first row becomes the first column
+            rot.get(0,0) +", "+rot.get(1,0)+", "+rot.get(2,0)+"; "+ //get(row, column): BoofCV is row-major, so the first row=x becomes the first column=x
             rot.get(0,1) +", "+rot.get(1,1)+", "+rot.get(2,1)+"; "+
             rot.get(0,2) +", "+rot.get(1,2)+", "+rot.get(2,2)+" ] ";
         return message_;
